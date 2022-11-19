@@ -10,7 +10,7 @@
 .navbar
 {
     
-    background: #165a99;
+    background: #0c2740;
      /*had at 80pxls but was getting cut off by my chrome bar at top*/
     height: 120px;
     /* Brings all the navbars into a row*/
@@ -34,7 +34,7 @@
     /*keeps above everything*/
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: 2000px;
     /*margin = top right bottom left*/
     /*if only put two values then its top/bottom and right/left*/
     margin: 0 auto;
@@ -48,19 +48,19 @@
 
     background-color: #ff881177;
     /*makes the gradient effect like going from one color to next */
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-image: linear-gradient(to top, #f76700 0%, #ffb199 100%);
     background-size: 100%;
     -webkit-background-clip: text;
-    -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    display: flex;
+    /*-moz-background-clip: text;
+    -moz-text-fill-color: transparent;*/
+    display:flex;
     align-items: center;
     /*when hovering over GoT it turn to a hand symbol*/
     cursor: pointer;
     text-decoration: none;
     /*Increases GoT font size*/
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .fa-gem
@@ -130,4 +130,207 @@
 {
     background: #4837ff;
     transition: all 0.5s ease;
+}
+
+/*For mobile response/tablet response -- when it hits 960pxls it will trigger this*/
+/*For example if I make the window smaller and smaller once it hits 800px it will follow this format*/
+@media screen and (max-width: 950px)
+{
+    .navbar__container
+    {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;        
+    }
+
+    .navbar__menu
+    {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        /*will hide the menu when not interacted with*/
+        top: -1000px;
+         opacity: 0;
+        transition: all 0.7s ease;
+        height: 50vh;
+        z-index: -1;
+        /*make this the same color as the .navbar  background (at the top)
+        also be sure to uncomment the top and opacity in this block - had it commented out for testing purposes */
+        background: #0c2740;
+    }
+
+    .navbar__menu.active
+    {
+        background: #0c2740;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.7s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.5rem;
+
+    }
+
+    #navbar__logo
+    {
+        padding-left: 20px;
+    }
+
+    .navbar__toggle .bar
+    {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition:all 0.5s ease-in-out;
+        background: #ffff;
+    }
+
+    .navbar__item
+    {
+        width: 100%;
+
+    }
+
+    .navbar__links
+    {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu
+    {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+    }
+
+    .navbar__btn
+    {
+        padding-bottom: 2rem;
+    }
+
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar
+    {
+        display: block;
+        cursor: pointer;
+    }
+
+    /*makes the drop down menu animated; .is-active is java script in the app.js*/
+
+    #mobile-menu.is-active .bar:nth-child(2)
+    {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1)
+    {
+        transform: translate(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3)
+    {
+        transform: translate(-8px) rotate(-45deg);
+    }
+}
+
+/*SECTION 2*/
+.main
+{
+    background-color: #f77062;
+}
+
+.main__container
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #b94a28;
+    background-image: linear-gradient(to top, #b94a28 0%, #3b88df 100% );
+    z-index: 1;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.main__content h1
+{
+    font-size: 3rem;
+    background-color: #131313;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100% );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*dont seem to need
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;*/
+}
+
+.main__content h2
+{
+    font-size: 2rem;
+    background-color: #131313;
+    background-image: linear-gradient(to top, #8915f6 0%, #034ed8 100% );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*dont seem to need
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;*/
+}
+
+.main__content p
+{
+    /*padding between h1 and h2*/
+    margin-top: 1rem;
+
+    font-weight: 700;
+    font-size: 1.7rem;
+    background-color: #131313;
+    background-image: linear-gradient(to top, #06d8f9 0%, #03d86a 100% );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*dont seem to need
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;*/
+}
+
+.main__btn {
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #a8f906 0%, #d8038d 100% );
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+/*adjust the text within the button in main*/
+.main__btn a
+{
+    position: inedex;
+    z-index: 2;
+    color: #ffff;
 }
