@@ -12,7 +12,7 @@
     
     background: #0c2740;
      /*had at 80pxls but was getting cut off by my chrome bar at top*/
-    height: 120px;
+    height: 150px;
     /* Brings all the navbars into a row*/
     display: flex;
     justify-content: center;
@@ -29,7 +29,6 @@
 {
 
     display: flex;
-    justify-content: space-between;
     height: 120 pxls;
     /*keeps above everything*/
     z-index: 1;
@@ -60,7 +59,7 @@
     cursor: pointer;
     text-decoration: none;
     /*Increases GoT font size*/
-    font-size: 2.5rem;
+    font-size: 5.5rem;
 }
 
 .fa-gem
